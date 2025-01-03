@@ -14,10 +14,19 @@
 
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
       "matchDepNames": ["karpenter"],
-      "commitMessageTopic": "karpenter Helm Chart",
+
+      // Karpenter Helm Chart is published via the OCI protocol.
+      // We "reconfigure" this to use Docker + HTTPS, which speaks the OCI
+      // protocol.
+      // The original registry URL is: oci://public.ecr.aws/karpenter/karpenter
+      "matchDatasources": ["docker"],
       "registryUrls": ["https://public.ecr.aws/karpenter/"],
+
+      // Custom message to remove Docker reference otherwise it displays
+      // "Update karpenter Docker tag to vX.Y.Z"
+      "commitMessageTopic": "karpenter Helm Chart",
+
       "changelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
     },
   ],
