@@ -1,4 +1,6 @@
 {
+  "dependencyDashboard": true,
+
   // Where to find repository-specific updates
   "customManagers": [
     {
