@@ -7,16 +7,16 @@
       "customType": "regex",
       "fileMatch": ["karpenter/Makefile"],
       "matchStrings": ["chart_version = (?<currentValue>.+?)\\n"],
-      "datasourceTemplate": "helm",
+      "datasourceTemplate": "docker",
       "depNameTemplate": "karpenter",
     },
   ],
 
   "packageRules": [
     {
-      "matchDatasources": ["helm"],
+      "matchDatasources": ["docker"],
       "matchDepNames": ["karpenter"],
-      "registryUrls": ["oci://public.ecr.aws/karpenter/karpenter"],
+      "registryUrls": ["https://public.ecr.aws/karpenter/karpenter"],
       "changelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
     },
   ],
