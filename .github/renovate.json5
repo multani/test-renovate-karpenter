@@ -17,7 +17,7 @@
       "matchDatasources": ["helm"],
       "matchDepNames": ["karpenter"],
       "registryUrls": ["oci://public.ecr.aws/karpenter"],
-      "customChangelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
+      "changelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
     },
   ],
 }
