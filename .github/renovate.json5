@@ -16,6 +16,7 @@
     {
       "matchDatasources": ["docker"],
       "matchDepNames": ["karpenter"],
+      "commitMessageTopic": "xxx",
       "registryUrls": ["https://public.ecr.aws/karpenter/"],
       "changelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
     },
