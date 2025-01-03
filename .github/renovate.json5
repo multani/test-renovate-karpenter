@@ -1,24 +1,30 @@
 {
-  "dependencyDashboard": true,
-
-  // Where to find repository-specific updates
-  "customManagers": [
+  dependencyDashboard: true,
+  customManagers: [
     {
-      "customType": "regex",
-      "fileMatch": ["karpenter/Makefile"],
-      "matchStrings": ["chart_version = (?<currentValue>.+?)\\n"],
-      "datasourceTemplate": "helm",
-      "depNameTemplate": "karpenter",
+      customType: 'regex',
+      fileMatch: [
+        'karpenter/Makefile',
+      ],
+      matchStrings: [
+        'chart_version = (?<currentValue>.+?)\\n',
+      ],
+      datasourceTemplate: 'helm',
+      depNameTemplate: 'karpenter',
     },
   ],
-
-  "packageRules": [
+  packageRules: [
     {
-      "matchDatasources": ["helm"],
-      "matchDepNames": ["karpenter"],
-      "registryUrls": ["oci://public.ecr.aws/karpenter"],
-      "customChangelogUrl": "https://github.com/kubernetes-sigs/karpenter/",
+      matchDatasources: [
+        'helm',
+      ],
+      matchDepNames: [
+        'karpenter',
+      ],
+      registryUrls: [
+        'oci://public.ecr.aws/karpenter',
+      ],
+      changelogUrl: 'https://github.com/kubernetes-sigs/karpenter/',
     },
   ],
 }
-
